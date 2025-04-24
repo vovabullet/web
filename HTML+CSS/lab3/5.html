@@ -8,43 +8,61 @@
         body {
             margin: 0;
         }
+        section {
+            background-color: #EEE;
+            border: solid;
+            padding: 20px 50px;
+            height: 100%;
+        }
         .gallery {
-            display: flex;
-            align-items: center;
-            list-style: none;
+            text-align: center;
             padding: 0;
+            margin: 10px 0;
+        }
+        .gallery li {
+            display: inline-block;
+            width: 30%;
+            height: 200px;
+            position: relative;
+            vertical-align: top;
+            font-size: 16px;
+            box-sizing: border-box;
         }
         .gallery img {
-            padding: 5px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
             border: 0.2rem black solid;
+            padding: 5px;
             background-color: white;
-            margin: 10px;
-            max-width: 150px;
         }
     </style>
 </head>
 <body>
     <section>
-        <div class="gallery">
-            <img src="./5/picture1.jpg" alt="">
-            <img src="./5/picture2.jpg" alt="">
-            <img src="./5/picture3.jpg" alt="">
-        </div>
-        <div class="gallery">
-            <img src="./5/picture4.jpg" alt="">
-            <img src="./5/picture5.jpg" alt="">
-            <img src="./5/picture6.jpg" alt="">
-        </div>
-        <div class="gallery">
-            <img src="./5/picture1.jpg" alt="">
-            <img src="./5/picture2.jpg" alt="">
-            <img src="./5/picture3.jpg" alt="">
-        </div>
-        <div class="gallery">
-            <img src="./5/picture4.jpg" alt="">
-            <img src="./5/picture5.jpg" alt="">
-            <img src="./5/picture6.jpg" alt="">
-        </div>
+        <ul class="gallery">
+            <li><img src="./5/picture1.jpg" alt=""></li>
+            <li><img src="./5/picture2.jpg" alt=""></li>
+            <li><img src="./5/picture3.jpg" alt=""></li>
+        </ul>
+        <ul class="gallery">
+            <li><img src="./5/picture4.jpg" alt=""></li>
+            <li><img src="./5/picture5.jpg" alt=""></li>
+            <li><img src="./5/picture6.jpg" alt=""></li>
+        </ul>
+        <ul class="gallery">
+            <li><img src="./5/picture1.jpg" alt=""></li>
+            <li><img src="./5/picture2.jpg" alt=""></li>
+            <li><img src="./5/picture3.jpg" alt=""></li>
+        </ul>
+        <ul class="gallery">
+            <li><img src="./5/picture4.jpg" alt=""></li>
+            <li><img src="./5/picture5.jpg" alt=""></li>
+            <li><img src="./5/picture6.jpg" alt=""></li>
+        </ul>
     </section>
 </body>
 </html>
