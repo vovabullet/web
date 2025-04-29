@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flexbox элемент</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: rgb(238, 238, 238);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section.container {
+            display: flex;
+            background-color: white;
+            padding: 20px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            flex-direction: column;
+        }
+        h2 {
+            font-size: 1rem;
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+<section class="container">
+    <div>
+        <h2>Card Title</h2>
+        <p>Some kind of description here that explains the strange behaviour of the system</p>
+    </div>
+</section>
+</body>
+</html>

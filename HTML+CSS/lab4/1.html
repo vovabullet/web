@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Гибкий макет</title>
+    <style>
+        body {
+            text-transform: uppercase;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            min-height: 100vh;
+            background-color: #EEE;
+            height: 100vh;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+        header, main, footer, aside {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+        }
+
+        header {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 100%;
+        }
+        main {
+            flex-grow: 3;
+            flex-shrink: 1;
+            flex-basis: 60%;
+        }
+        aside {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 30%;
+        }
+        footer {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <main>Main</main>
+    <aside>Aside</aside>
+    <footer>Footer</footer>
+</body>
+</html>

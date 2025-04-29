@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flexbox Фотогалерея</title>
+    <style>
+        body {
+            margin: 5vh 0 0 0;
+            padding: 0;
+            min-height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow: hidden;
+            font-family: Georgia, serif;
+            background-color: #EEE;
+        }
+
+        section.gallery {
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        h1 {
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        li {
+            display: flex;
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 30%;
+            background-color: white;
+            padding: 10px;
+            border: 5px solid black;
+            box-shadow: 5px 5px 10px #888888;
+            box-sizing: border-box;
+            height: 250px;
+        }
+
+        li img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <section class="gallery">
+        <ul>
+            <li><img src="./3/images/picture1.jpg"></li>
+            <li><img src="./3/images/picture2.jpg"></li>
+            <li><img src="./3/images/picture3.jpg"></li>
+            <li><img src="./3/images/picture4.jpg"></li>
+            <li><img src="./3/images/picture5.jpg"></li>
+            <li><img src="./3/images/picture6.jpg"></li>
+            <li><img src="./3/images/picture7.jpg"></li>
+            <li><img src="./3/images/picture8.jpg"></li>
+            <li><img src="./3/images/picture9.jpg"></li>
+        </ul>
+    </section>
+</body>
+</html>

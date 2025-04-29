@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Карточки</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: rgb(238, 238, 238);
+            font-family: sans-serif;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .cards-layout {
+            display: flex;
+            gap: 20px;
+        }
+
+        .masonry {
+            flex-wrap: wrap;
+            align-items: flex-start;
+            column-gap: 20px;
+        }
+
+        .masonry .card {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .flex {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .flex .card {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding-bottom: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .card h3 {
+            margin: 10px 0 5px;
+            font-size: 1em;
+            padding: 0 10px;
+        }
+
+        .card p {
+            padding: 0 10px;
+            font-size: 0.875em;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Layout Masonry</h2>
+<div class="cards-layout masonry">
+    <div class="card">
+        <img src="./5/images/image1.jpg" alt="">
+        <h3>Заголовок</h3>
+        <p>Описание карточки с текстом.</p>
+    </div>
+    <div class="card">
+        <img src="./5/images/image2.jpg" alt="">
+        <h3>Заголовок</h3>
+        <p>Текст короче.</p>
+    </div>
+    <div class="card">
+        <img src="./5/images/image3.jpg" alt="">
+        <h3>Заголовок</h3>
+        <p>Больше текста внутри карточки, чтобы показать разницу в высоте.</p>
+    </div>
+    <div class="card">
+        <img src="./5/images/image4.jpg" alt="">
+        <h3>Заголовок</h3>
+        <p>Пример разной высоты.</p>
+    </div>
+    <div class="card">
+        <img src="./5/images/image4.jpg" alt="">
+        <h3>Заголовок</h3>
+        <p>Пример разной высоты.</p>
+    </div>
+    <div class="card">
+        <img src="./5/images/image4.jpg" alt="">
+        <h3>Заголовок</h3>
+        <p>Пример разной высоты.</p>
+    </div>
+</div>
+
+<h2>Layout Flex</h2>
+<div class="cards-layout flex">
+    <div class="card">
+        <img src="https://picsum.photos/id/201/200/150" alt="">
+        <h3>Заголовок</h3>
+        <p>Описание карточки с текстом.</p>
+    </div>
+    <div class="card">
+        <img src="https://picsum.photos/id/202/200/100" alt="">
+        <h3>Заголовок</h3>
+        <p>Текст короче.</p>
+    </div>
+    <div class="card">
+        <img src="https://picsum.photos/id/203/200/200" alt="">
+        <h3>Заголовок</h3>
+        <p>Больше текста внутри карточки, чтобы показать разницу в высоте.</p>
+    </div>
+    <div class="card">
+        <img src="https://picsum.photos/id/204/200/130" alt="">
+        <h3>Заголовок</h3>
+        <p>Пример разной высоты.</p>
+    </div>
+</div>
+
+</body>
+</html>
