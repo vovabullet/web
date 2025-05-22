@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Адаптивная форма</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #EEEEEE;
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif;
+        }
+        section {
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid #aaaaaa;
+            margin: 50px auto;
+            height: 250px;
+        }
+        .title {
+            position: relative;
+            padding: 8px 20px;
+            font-size: 18px;
+            border: 1px solid #aaaaaa;
+            border-radius: 3px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+            width: 33%;
+            bottom: 20px;
+            right: 1px;
+            background-color: white;
+        }
+        .content {
+            padding: 15px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            height: 100%;
+        }
+        input {
+            height: 28px;
+            border: 1px solid #aaaaaa;
+            border-radius: 3px;
+            width: 75%;
+        }
+        button {
+            max-width: 15%;
+            height: 30px;
+            font-weight: bold;
+            background-color: #373737;
+            border-radius: 3px;
+            border: none;
+            color: white;
+            transition: all 0.2s ease;
+        }
+        button:hover {
+            color: black;
+            background-color: #e3e3e3;
+        }
+
+        @media (min-width: 1201px) {
+            section {
+                max-width: 600px;
+                font-size: 18px;
+            }
+        }
+        @media (min-width: 901px) and (max-width: 1200px) {
+            section {
+                max-width: 450px;
+                font-size: 17px;
+            }
+            input {
+                width: 70%;
+            }
+        }
+        @media (min-width: 481px) and (max-width: 900px) {
+            section {
+                max-width: 350px;
+                font-size: 16px;
+            }
+            form {
+                gap: 17px;
+            }
+            input {
+                width: 85%;
+            }
+        }
+        @media (max-width: 480px) {
+            section {
+                max-width: 95%;
+                font-size: 14px;
+                height: 250px;
+            }
+            form {
+                gap: 17px;
+            }
+            input {
+                width: 85%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="title">Login</div>
+        <div class="content">
+            <form>
+
+                <div class="input-group">
+                    <label>Username
+                        <input type="text" placeholder="👤">
+                    </label>
+                </div>
+
+                <div class="input-group">
+                    <label>Password
+                        <input type="text" placeholder="🔑">
+                    </label>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
