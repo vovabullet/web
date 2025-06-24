@@ -8,7 +8,7 @@ function operation(arr) {
     for (i = 0; i < arr.length; i++) {
         let num = arr[i]
         sum += num
-        if (num % 2 == 0) {
+        if (num % 2 === 0) {
             num += i
             newArr.push(num)
         } else {

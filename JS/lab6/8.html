@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fill Dropdown</title>
+  <script src="dropdown.js"></script>
+  <link rel="stylesheet" href="filldropdown.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+    body {
+      width: 40%;
+      margin: 0 auto;
+      padding-top: 20px;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    h1 {
+      background-color: cadetblue;
+      margin: 0;
+      padding: 10px 20px;
+    }
+
+    article {
+      background-color: #DDDDDD;
+      padding: 10px 20px;
+    }
+
+    #menu {
+      padding: 3px 7px;
+      border-radius: 15px;
+    }
+
+    input, select {
+      outline: none;
+      padding: 5px;
+    }
+    select {
+      margin-bottom: 12px;
+    }
+
+    input[type="text"] {
+      border: 1px solid darkgray;
+      border-radius: 15px;
+    }
+
+    input[type="button"] {
+      background: white;
+      margin-left: 20px;
+      padding: 5px 15px;
+      border: 1px solid darkgray;
+      border-radius: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #8198A2;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+<h1>Dropdown Menu</h1>
+<article>
+  <div>
+    <select id="menu"></select>
+  </div>
+  <label for="newItemText">
+    Text:
+  </label>
+  <input type="text" id="newItemText" />
+  <label for="newItemValue">
+    Value:
+  </label>
+  <input type="text" id="newItemValue" />
+  <input type="button" value="Add" onclick="addItem()">
+</article>
+
+<script>
+  function addItem() {
+    const textInput = document.getElementById('newItemText');
+    const valueInput = document.getElementById('newItemValue');
+
+    const text = textInput.value.trim();
+    const value = valueInput.value.trim();
+
+    if (!text || !value) {
+      alert('!!!');
+      return;
+    }
+
+    const option = document.createElement('option');
+    option.textContent = text;
+    option.value = value;
+
+    document.getElementById('menu').appendChild(option);
+
+    textInput.value = '';
+    valueInput.value = '';
+  }
+</script>
+</body>
+
+</html>

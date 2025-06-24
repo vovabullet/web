@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="template.css">
+  <title>Locked Profile</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Lato');
+    @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html{
+      font-family: "PT sans", sans-serif;
+      font-size: 24px;
+      color: #234465;
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      min-height: 100vh;
+      flex-wrap: wrap;
+    }
+    #main{
+      background: url(background.png) no-repeat center center;
+      background-size: cover;
+      margin-top: 1%;
+    }
+
+    #exercise{
+      width: 70%;
+      float: left;
+      padding: 1rem 0 1rem 1rem;
+    }
+    main:after{
+      display: block;
+      content:'';
+      clear: both;
+    }
+
+    input[type="button"], button{
+      padding: 0.3rem 0.5rem;
+      font-size: 0.7em;
+      margin: 1rem 0 1rem 0;
+      border: none;
+      color: white;
+      background: #234465;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .profile{
+      border:2px solid black;
+      display: inline-block;
+      margin-left: 12%;
+      width: 18%;
+      vertical-align: top;
+    }
+
+    .userIcon{
+      width: 99%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    input[name="user3Username"], input[name="user2Username"], input[name="user1Username"]{
+      display: inline-block;
+      width: 100%;
+    }
+
+    #user1HiddenFields input, #user2HiddenFields input, #user3HiddenFields input{
+      width: 100%;
+    }
+
+    #user1HiddenFields, #user2HiddenFields, #user3HiddenFields{
+      display: none;
+    }
+  </style>
+</head>
+
+<body onload="lockedProfile()">
+<div id="container">
+  <main id="main">
+
+    <div class="profile">
+      <img src="./iconProfile2.png" class="userIcon" />
+      <label>Lock</label>
+      <input type="radio" name="user1Locked" value="lock" checked>
+      <label>Unlock</label>
+      <input type="radio" name="user1Locked" value="unlock"><br>
+      <hr>
+      <label>Username</label>
+      <input type="text" name="user1Username" value="User 1 Userov" disabled readonly />
+      <div id="user1HiddenFields">
+        <hr>
+        <label>Email:</label>
+        <input type="email" name="user1Email" value="user1-userov@users.com" disabled readonly />
+        <label>Age:</label>
+        <input type="email" name="user1Age" value="18" disabled readonly />
+      </div>
+      <button>Show more</button>
+    </div>
+
+    <div class="profile">
+      <img src="./iconProfile2.png" class="userIcon" />
+      <label>Lock</label>
+      <input type="radio" name="user2Locked" value="lock" checked>
+      <label>Unlock</label>
+      <input type="radio" name="user2Locked" value="unlock"><br>
+      <hr>
+      <label>Username</label>
+      <input type="text" name="user2Username" value="User 2 Userov" disabled readonly />
+      <div id="user2HiddenFields">
+        <hr>
+        <label>Email:</label>
+        <input type="email" name="user2Email" value="user2-userov@users.com" disabled readonly />
+        <label>Age:</label>
+        <input type="email" name="user2Age" value="25" disabled readonly />
+      </div>
+      <button>Show more</button>
+    </div>
+
+    <div class="profile">
+      <img src="./iconProfile2.png" class="userIcon" />
+      <label>Lock</label>
+      <input type="radio" name="user3Locked" value="lock" checked>
+      <label>Unlock</label>
+      <input type="radio" name="user3Locked" value="unlock"><br>
+      <hr>
+      <label>Username</label>
+      <input type="text" name="user3Username" value="User 3 Userov" disabled readonly />
+      <div id="user3HiddenFields">
+        <hr>
+        <label>Email:</label>
+        <input type="email" name="user3Email" value="user3-userov@users.com" disabled readonly />
+        <label>Age:</label>
+        <input type="email" name="user3Age" value="23" disabled readonly />
+      </div>
+      <button>Show more</button>
+    </div>
+  </main>
+</div>
+
+<script>
+  function lockedProfile() {
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const profile = btn.parentElement;
+        const hiddenInfo = profile.querySelector('div');
+        const lockStatus = profile.querySelector('input[type="radio"][value="lock"]');
+
+        if (lockStatus.checked) {
+          return;
+        }
+
+        if (btn.textContent === 'Show more') {
+          hiddenInfo.style.display = 'block';
+          btn.textContent = 'Hide it';
+        } else {
+          hiddenInfo.style.display = 'none';
+          btn.textContent = 'Show more';
+        }
+      });
+    });
+  }
+
+</script>
+</body>
+</html>

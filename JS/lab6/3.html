@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    section {
+      margin: auto;
+      max-width: 600px;
+      border: 1px solid black;
+      padding: 10px;
+      height: auto;
+    }
+    .main {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 10px;
+      background-color: lightblue;
+      border: 1px solid gray;
+    }
+    p {
+      display: none;
+      padding: 5px;
+      border: 1px solid gray;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+    <section>
+        <div class="main">
+          <h1>DOM Manipulation Exercise</h1>
+          <button id="button" onclick="more()">MORE</button>
+        </div>
+        <p id="text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium mattis tincidunt. Sed dui nunc, malesuada non feugiat et, placerat vitae arcu. Quisque sit amet felis diam. Aenean tellus sapien, tempor sit amet tincidunt a, pellentesque vel dui. Nulla ligula leo, venenatis vitae dui eget, dignissim sagittis ante.
+        </p>
+    </section>
+
+    <script>
+      let isShowing = false;
+
+      function more() {
+        if (isShowing) {
+          document.getElementById('text').style.display = 'none';
+          document.getElementById('button').textContent = "MORE";
+          isShowing = false;
+        } else {
+          document.getElementById('text').style.display = 'block';
+          document.getElementById('button').textContent = "LESS";
+          isShowing = true;
+        }
+      }
+
+      // function more() {
+      //   if (isShowing) {
+      //     isShowing = false;
+      //     document.getElementById('text').textContent = "";
+      //     document.getElementById('button').textContent = "MORE";
+      //   } else {
+      //     isShowing = true;
+      //     document.getElementById('text').textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium mattis tincidunt. Sed dui nunc, malesuada non feugiat et, placerat vitae arcu. Quisque sit amet felis diam. Aenean tellus sapien, tempor sit amet tincidunt a, pellentesque vel dui. Nulla ligula leo, venenatis vitae dui eget, dignissim sagittis ante.";
+      //     document.getElementById('button').textContent = "LESS";
+      //   }
+      // }
+    </script>
+</body>
+</html>

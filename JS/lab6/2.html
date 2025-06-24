@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="text" placeholder="type text...">
+    <input type="text" id="command" placeholder="type case...">
+    <button onclick="Transform()">TRANSFORM</button>
+    <div id="result">Result: </div>
+
+    <script>
+      function Transform() {
+        const text = document.getElementById('text').value.split(" ");
+        const command = document.getElementById('command').value.split(" ")[0];
+        let result = "";
+        if ("Camel" === command) {
+          result += text[0].toLowerCase();
+        } else if ("Pascal" === command) {
+          result += text[0][0].toUpperCase() + text[0].slice(1).toLowerCase();
+        } else {
+          document.getElementById('result').textContent = "Error!";
+          return
+        }
+        for (let i = 1; i < text.length; i++) {
+          result += text[i][0].toUpperCase() + text[i].slice(1).toLowerCase();
+        }
+        document.getElementById('result').textContent = result;
+      }
+    </script>
+</body>
+</html>

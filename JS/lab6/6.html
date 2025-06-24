@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Time Converter</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    main {
+      width: 44%;
+      margin: 2rem auto;
+      text-align: center;
+      background: #f6f6f6;
+      padding: 1rem;
+      border-radius: 4px;
+    }
+
+    main label, main input {
+      display: block;
+    }
+
+    main input {
+      text-align: center;
+      width: 50%;
+      margin: 1rem auto;
+    }
+
+    #daysBtn, #hoursBtn, #minutesBtn, #secondsBtn {
+      background: gray;
+      width: 18%;
+      border: 2px solid gray;
+      border-radius: 4px;
+      padding: 4px 9px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: white;
+    }
+  </style>
+</head>
+
+<body onload="attachEventsListeners()">
+<main>
+  <h1>Time Converter</h1>
+  <div>
+    <label for="days">Days: </label>
+    <input type="text" id="days">
+    <input id="daysBtn" type="button" value="Convert">
+  </div>
+  <div>
+    <label for="hours">Hours: </label>
+    <input type="text" id="hours">
+    <input id="hoursBtn" type="button" value="Convert">
+  </div>
+  <div>
+    <label for="minutes">Minutes: </label>
+    <input type="text" id="minutes">
+    <input id="minutesBtn" type="button" value="Convert">
+  </div>
+  <div>
+    <label for="seconds">Seconds: </label>
+    <input type="text" id="seconds">
+    <input id="secondsBtn" type="button" value="Convert">
+  </div>
+</main>
+</body>
+
+<script>
+  function attachEventsListeners() {
+    const buttons = document.querySelectorAll('input[type="button"]');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        const inputId = button.previousElementSibling.id;
+        const inputValue = parseFloat(document.getElementById(inputId).value);
+
+        let seconds;
+        switch(inputId) {
+          case 'days':
+            seconds = inputValue * 24 * 60 * 60;
+            break;
+          case 'hours':
+            seconds = inputValue * 60 * 60;
+            break;
+          case 'minutes':
+            seconds = inputValue * 60;
+            break;
+          case 'seconds':
+            seconds = inputValue;
+            break;
+        }
+
+        document.getElementById('days').value = (seconds / 60 / 60 / 24).toFixed(2);
+        document.getElementById('hours').value = (seconds / 60 / 60).toFixed(2);
+        document.getElementById('minutes').value = (seconds / 60).toFixed(2);
+        document.getElementById('seconds').value = seconds.toFixed(2);
+      });
+    });
+  }
+</script>
+
+</html>

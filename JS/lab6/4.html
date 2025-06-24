@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search in List</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src="search.js"></script>
+    <link rel="stylesheet" href="list.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+        body {
+            width: 20%;
+            margin: 0 auto;
+            font-family: 'Raleway',sans-serif;
+        }
+        article{
+            background: #34469c;;
+            border-radius: 20px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        #towns {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #towns li {
+            margin: 10px auto;
+            width: 90%;
+            text-align: left;
+            color: white;
+        }
+
+        #searchText{
+            background: white;
+            text-decoration: none;
+            margin: 15px auto;
+            width: 90%;
+            padding:5px 10px;
+            text-align: left;
+        }
+
+        button {
+            background: white;
+            margin-left:8px;
+            padding: 8px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+            color: #34469c;;
+            text-transform: uppercase;
+            border: 2px solid white;
+
+        }
+
+        button:hover {
+            color: white;
+            background: #34469c;;
+            border: 2px solid white;
+        }
+        #result {
+            padding: 10px;
+            margin: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<article>
+    <ul id="towns">
+        <li>Москва</li>
+        <li>Киев</li>
+        <li>Минск</li>
+        <li>Самара</li>
+        <li>Одесса</li>
+        <li>Рига</li>
+    </ul>
+    <input type="text" id="searchText" />
+    <button onclick="search()">Search</button>
+    <div id="result"></div>
+</article>
+
+<script>
+    function search() {
+        const searchText = document.getElementById('searchText').value.toLowerCase().split(" ");
+        const towns = document.querySelectorAll('#towns li');
+        let matches = 0;
+
+        towns.forEach(town => {
+            town.style.fontWeight = 'normal';
+            town.style.textDecoration = 'none';
+
+            if (searchText) {
+                const townText = town.textContent.toLowerCase();
+                searchText.forEach(requestTown => {
+                    if (townText.includes(requestTown)) {
+                        town.style.fontWeight = 'bold';
+                        town.style.textDecoration = 'underline';
+                        matches++;
+                    }
+                })
+            }
+        });
+
+        document.getElementById('result').textContent = `${matches} совпадений найдено`;
+    }
+</script>
+</body>
+</html>
